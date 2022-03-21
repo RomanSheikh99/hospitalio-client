@@ -54,6 +54,7 @@ const DoctorProfile = () => {
             apointment.doctorName = displayDoctor[0].name;
             apointment.visitingCost = displayDoctor[0].cost;
             apointment.doctorImg = displayDoctor[0].img;
+            apointment.status = 'pending';
             apointment.userId = user.email;
             axios.post('https://serene-hamlet-92817.herokuapp.com/addAppointment', apointment).then(res => {
                 if (res.data.insertedId) {

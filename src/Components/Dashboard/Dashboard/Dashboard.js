@@ -22,6 +22,7 @@ import { Button } from '@mui/material';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useFirebase from '../../../Hooks/useFirebase';
 import AddDoctor from '../AddDoctor/AddDoctor';
+import ApointmentRequest from '../ApointmentRequest/ApointmentRequest';
 
 const drawerWidth = 200;
 
@@ -53,6 +54,9 @@ function Dashboard(props) {
         </li>
         <li>
           <Link to={`${url}/addDoctor`}>Add Doctor</Link>
+        </li>
+        <li>
+          <Link to={`${url}/appointmentReq`}>Appointment Req</Link>
         </li>
         <li>
           <Link to={`${url}/makeAdmin`}>Make Admin</Link>
@@ -156,6 +160,9 @@ function Dashboard(props) {
           </Route>
           <Route path={`${path}/addDoctor`}>
             <AddDoctor />
+          </Route>
+          <Route path={`${path}/appointmentReq`}>
+            <ApointmentRequest></ApointmentRequest>
           </Route>
         </Switch>
       </Box>
