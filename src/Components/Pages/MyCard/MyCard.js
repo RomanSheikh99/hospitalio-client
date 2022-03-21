@@ -78,7 +78,7 @@ const MyCard = () => {
                             className="border border-dark border-3 rounded-3 p-3"
                         >
                             <h4>Total Cost</h4>
-                            <h3> $ {totalCost} </h3>
+                            <h3> $ {totalCost.toFixed(2)} </h3>
                             <h4>Discount</h4>
                             <h3> $ {discount.toFixed(2)} </h3>
                             <h4>Cost After Discount</h4>

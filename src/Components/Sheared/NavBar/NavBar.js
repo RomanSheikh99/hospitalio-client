@@ -106,6 +106,14 @@ const NavBar = () => {
                                         My Card 
                                     </Link>
                                 </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link
+                                        to='/apointment'
+                                        style={{color: '#000', textDecoration: 'none' }}
+                                    >
+                                        Apointment
+                                    </Link>
+                                </NavDropdown.Item>
                                 {admin && <NavDropdown.Item href="#action/3.2">
                                     <Link
                                         to="/dashboard"

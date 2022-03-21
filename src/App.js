@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AuthProvider from './Components/Context/AuthProvider/AuthProvider';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import About from './Components/Pages/About/About';
+import Apointments from './Components/Pages/Apointments/Apointments';
 import Contact from './Components/Pages/Contact/Contact';
 import DoctorProfile from './Components/Pages/DoctorProfile/DoctorProfile';
 import Home from './Components/Pages/Home/Home/Home';
@@ -53,6 +54,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/apointment">
+            <Apointments></Apointments>
           </PrivateRoute>
           <PrivateRoute exact path="/doctor/:doctorID">
             <DoctorProfile></DoctorProfile>
