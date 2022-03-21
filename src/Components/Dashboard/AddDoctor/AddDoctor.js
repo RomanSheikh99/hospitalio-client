@@ -7,7 +7,7 @@ const AddDoctor = () => {
   
   const onSubmit = data => {
 
-    axios.post('http://localhost:5000/addDoctor', data).then(res => {
+    axios.post('https://serene-hamlet-92817.herokuapp.com/addDoctor', data).then(res => {
       if (res.data.insertedId) {
         alert('added successfully');
         reset();

@@ -23,20 +23,20 @@ const DoctorProfile = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/doctor/${doctorID}`)
+        fetch(`https://serene-hamlet-92817.herokuapp.com/doctor/${doctorID}`)
             .then(res => res.json())
             .then(data => setDisplayDoctor(data))
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${doctorID}`)
+        fetch(`https://serene-hamlet-92817.herokuapp.com/review/${doctorID}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [isAddNewReview]);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appointment/${user.email}`)
+        fetch(`https://serene-hamlet-92817.herokuapp.com/appointment/${user.email}`)
             .then(res => res.json())
             .then(data => setAppointment(data))
     }, [appointment]);
@@ -55,7 +55,7 @@ const DoctorProfile = () => {
             apointment.visitingCost = displayDoctor[0].cost;
             apointment.doctorImg = displayDoctor[0].img;
             apointment.userId = user.email;
-            axios.post('http://localhost:5000/addAppointment', apointment).then(res => {
+            axios.post('https://serene-hamlet-92817.herokuapp.com/addAppointment', apointment).then(res => {
                 if (res.data.insertedId) {
                     reset();
                     alert('Appointment Granted');

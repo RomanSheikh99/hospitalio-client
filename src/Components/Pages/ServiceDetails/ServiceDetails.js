@@ -13,13 +13,13 @@ const ServiceDetails = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${serviceID}`)
+        fetch(`https://serene-hamlet-92817.herokuapp.com/service/${serviceID}`)
             .then(res => res.json())
             .then(data => setDisplayService(data))
     }, [displayService]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/card/${user.email}`)
+        fetch(`https://serene-hamlet-92817.herokuapp.com/card/${user.email}`)
             .then(res => res.json())
             .then(data => setCard(data))    
     },[card]);
@@ -38,7 +38,7 @@ const ServiceDetails = () => {
             service.serviceImg = displayService[0].img;
             service.userId = user.email;
         
-            axios.post('http://localhost:5000/addCard', service).then(res => {
+            axios.post('https://serene-hamlet-92817.herokuapp.com/addCard', service).then(res => {
                 if (res.data.insertedId) {
                     setCard([]);
                     alert('Add To Card');

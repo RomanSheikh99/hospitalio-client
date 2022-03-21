@@ -9,7 +9,7 @@ const NavBar = () => {
     const [admin, setAdmin] = useState(false)
     
     useEffect(() => {
-        fetch('http://localhost:5000/admin')
+        fetch('https://serene-hamlet-92817.herokuapp.com/admin')
             .then(res => res.json())
             .then(data => {
                 data.map(d => {

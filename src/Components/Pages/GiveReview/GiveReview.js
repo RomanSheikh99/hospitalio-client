@@ -15,7 +15,7 @@ const GiveReview = ({ doctor,updateReview }) => {
         review.review = data.review;
         review.userId = user.email;
 
-        axios.post('http://localhost:5000/giveReview', review).then(res => {
+        axios.post('https://serene-hamlet-92817.herokuapp.com/giveReview', review).then(res => {
             if (res.data.insertedId) {
                 reset();
                 updateReview();

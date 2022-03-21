@@ -5,7 +5,7 @@ import axios from 'axios';
 const MakeAdmin = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    axios.post('http://localhost:5000/makeAdmin', data).then(res => {
+    axios.post('https://serene-hamlet-92817.herokuapp.com/makeAdmin', data).then(res => {
       if (res.data.insertedId) {
         alert('added successfully');
         reset();

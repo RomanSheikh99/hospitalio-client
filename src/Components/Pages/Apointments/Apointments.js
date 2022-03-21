@@ -12,7 +12,7 @@ const Apointments = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appointment/${user.email}`)
+        fetch(`https://serene-hamlet-92817.herokuapp.com/appointment/${user.email}`)
             .then(res => res.json())
             .then(data => setApointment(data))    
     }, [isDeleted]);
@@ -21,7 +21,7 @@ const Apointments = () => {
     const handleDelete = id => {
         const handleConfirm = window.confirm('Are you sure to delete');
         if (handleConfirm) {
-          fetch(`http://localhost:5000/deleteAppointment/${id}`, {
+          fetch(`https://serene-hamlet-92817.herokuapp.com/deleteAppointment/${id}`, {
             method: 'DELETE',
             headers: {
               'content-type': 'application/json',
