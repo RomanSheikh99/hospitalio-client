@@ -68,13 +68,13 @@ const Footer = () => {
                         <span
                             className="d-flex gap-2 mt-4 align-items-center">
                             <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                            dev.romansheikh@gmail.com
+                            hospitalio@gmail.com
                         </span>
                     </Col>
                 </Row>
             </Container>
             <div className='bg-black text-center py-4'>
-                <span>Copyright © <span style={{color:'#12C1AD'}}>DiPto</span> . All Rights Reserved</span>
+                <span>Copyright © <span style={{color:'#12C1AD'}}>Hospitalio</span> . All Rights Reserved</span>
             </div>
         </div>
     );

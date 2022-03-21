@@ -9,6 +9,7 @@ const Register = () => {
         googleSignIn,
         getEmail,
         getPassword,
+        emailVerification,
         signUpUsingEmail,
         error,
         setUser,
@@ -46,8 +47,10 @@ const Register = () => {
         signUpUsingEmail()
             .then(result => {
                 const user = result.user;
-                setUser(user);
-                history.push(redirect_url);
+                emailVerification().then(res => {
+                    setUser(user);
+                    history.push(redirect_url);
+                })
             })
             .catch(error => {
                 setError(error.massage)

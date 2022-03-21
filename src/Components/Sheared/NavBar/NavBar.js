@@ -26,7 +26,7 @@ const NavBar = () => {
             <Container>
                 <Navbar expand="lg">
                     <Navbar.Brand>
-                        <Link to="/home">
+                        <Link to="/">
                             <img src={logo} alt="" />
                         </Link>
                     </Navbar.Brand>

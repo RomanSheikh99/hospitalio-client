@@ -5,7 +5,8 @@ import {
     onAuthStateChanged,
     signOut,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    sendEmailVerification 
     }
     from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -46,6 +47,10 @@ const useFirebase = () => {
         return createUserWithEmailAndPassword(auth, email, password)
     };
 
+    const emailVerification = () => {
+        return sendEmailVerification(auth.currentUser)
+    }
+
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -75,6 +80,7 @@ const useFirebase = () => {
         getPassword,
         signInUsingEmail,
         signUpUsingEmail,
+        emailVerification,
         error
     }
 

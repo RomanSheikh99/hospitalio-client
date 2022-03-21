@@ -2,7 +2,8 @@ import { faClock, faHandHoldingMedical, faTrophy, faUsers } from '@fortawesome/f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import team from '../../../images/team.png'
+import team from '../../../images/team.jpg'
+import pol from '../../../images/pol.jpg'
 import Footer from '../../Sheared/Footer/Footer';
 import NavBar from '../../Sheared/NavBar/NavBar';
 
@@ -18,11 +19,22 @@ const About = () => {
                 </Container>
             </div>
             <Container>
-                <div className="text-center my-3">
-                    <h2 className="my-3">A LITTLE BIT ABOUT US</h2>
-                    <p className="px-5">Dipto Hospital Ltd. is an advanced Centre for diagnostic and medical services. It is one of the prestigious diagnostic complexes of Bangladesh which started its activities in 1983. Dipto Hospital Ltd. is the largest diagnostic services provider organization in private sector of the country. It is been pioneer in introducing world latest medical equipments and advanced technology to provide round the clock medical investigations and consultancy services.</p>
-                    <div>
-                        <img className="img-fluid" src={team} alt="" />
+                <div className="row my-4">
+                    <div className='col-md-5'>
+                        <img className="img-fluid w-100" src={pol} alt="" />
+                    </div>
+                    <div className="col-md-7 p-3">
+                        <h2 className="my-3">Our Policy</h2>
+                        <p className=""> Hospitalio Ltd. is an advanced Centre for diagnostic and medical services. It is one of the prestigious diagnostic complexes of Bangladesh which started its activities in 1983. Dipto Hospital Ltd. is the largest diagnostic services provider organization in private sector of the country. It is been pioneer in introducing world latest medical equipments and advanced technology to provide round the clock medical investigations and consultancy services.</p>
+                    </div>
+                </div>
+                <div className="row my-4">
+                    <div className="col-md-7 p-3">
+                        <h2 className="my-3">Meet Our Team</h2>
+                        <p className=""> Understanding the roles of each member of your healthcare team is important, especially when managing a chronic condition. Knowing what each professional does, and the differences between roles, will help you, the patient at the center of everyone’s job.The healthcare team, regardless of whether you’re treated at a large academic institution or a small, rural private practice, is the group of professionals who contribute to your care and treatment as a patient. Typical members of a healthcare team are a doctor and a registered nurse. </p>
+                    </div>
+                    <div className='col-md-5'>
+                        <img className="img-fluid w-100" src={team} alt="" />
                     </div>
                 </div>
                 <div className="my-3">

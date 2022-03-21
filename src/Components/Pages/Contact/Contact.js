@@ -64,7 +64,7 @@ const Contact = () => {
                         <span
                             className="d-flex gap-2 mt-4 align-items-center">
                             <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                            dev.romansheikh@gmail.com
+                            hospitalio@gmail.com
                         </span>
                     </Col>
                 </Row>

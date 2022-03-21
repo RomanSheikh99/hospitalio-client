@@ -7,32 +7,36 @@ import slide4 from '../../../../images/slide/slide04.jpg'
 
 const Banner = () => {
     return (
-        <div>
+        <div style={{maxHeight: '460px'}}>
             <Carousel fade>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        style={{maxHeight: '460px'}}
+                        className="d-block img-fluid img-thumbnail w-100"
                         src={slide1}
                         alt="First slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        style={{maxHeight: '460px'}}
+                        className="d-block img-fluid img-thumbnail w-100"
                         src={slide2}
                         alt="Second slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        style={{maxHeight: '460px'}}
+                        className="d-block img-fluid img-thumbnail w-100"
                         src={slide3}
                         alt="Third slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        style={{maxHeight: '460px'}}
+                        className="d-block img-fluid img-thumbnail w-100"
                         src={slide4}
                         alt="Fourth slide"
                     />
