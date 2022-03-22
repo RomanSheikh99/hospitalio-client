@@ -1,4 +1,3 @@
-import { integerPropType } from '@mui/utils';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
@@ -9,20 +8,40 @@ import NavBar from '../../Sheared/NavBar/NavBar';
 
 const MyCard = () => {
     const [card, setCard] = useState([]);
+    const [isDeleted, setIsDeleted] = useState(false);
     const { user } = useAuth();
 
     useEffect(() => {
         fetch(`http://localhost:5000/card/${user.email}`)
             .then(res => res.json())
             .then(data => setCard(data))    
-    }, []);
+    }, [isDeleted]);
     
     let totalCost = 0;
-    card.map(data => {
-        totalCost = totalCost + parseFloat(data.serviceCost);
-    })
+    card.map(data => totalCost = totalCost + parseFloat(data.serviceCost))
     let discount = totalCost >= 25 ? (totalCost / 100) * 20 : 0;
     let costAfterDiscount = totalCost - discount;
+
+    const handleDelete = id => {
+        const handleConfirm = window.confirm('Are you sure to delete');
+        if (handleConfirm) {
+          fetch(`http://localhost:5000/deleteCard/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'content-type': 'application/json',
+            },
+          })
+            .then(res => res.json())
+            .then(result => {
+              if (result.deletedCount) {
+                  setIsDeleted(true);
+                  alert('Deleted Service')
+              } else {
+                setIsDeleted(false);
+              }
+            });
+        }
+      };
 
 
     const addOrder = () => {
@@ -44,7 +63,12 @@ const MyCard = () => {
                     <div className='col-md-8'>
                         <div className="container">
                             {
-                                card.map(data => <Card key={data._id} card={data}></Card>)
+                                card.map(data => <Card
+                                    key={data._id}
+                                    card={data}
+                                    handleDelete={handleDelete}
+                                >
+                                </Card>)
                             }
                         </div>
                     </div>

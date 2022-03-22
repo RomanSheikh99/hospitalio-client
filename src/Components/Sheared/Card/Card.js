@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Card = ({ card }) => {
-    console.log(card);
+const Card = ({ card, handleDelete }) => {
     return (
         <div className='card mb-3'>
             <div className="row">
@@ -22,6 +21,7 @@ const Card = ({ card }) => {
                     style={{ display: 'flex', justifyContent: 'center', alignItem: 'center' }}
                 >
                     <button
+                        onClick={()=> handleDelete(card._id)}
                         style={{ fontSize: '20px', fontWeight: '700', color: 'red' }}
                         className='btn py-0'
                     >X

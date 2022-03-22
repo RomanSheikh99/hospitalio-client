@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import Footer from '../../Sheared/Footer/Footer';
 import NavBar from '../../Sheared/NavBar/NavBar';
 import axios from 'axios';
